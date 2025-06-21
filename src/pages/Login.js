@@ -4,7 +4,7 @@ import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
 
 const Login = () => {
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState("");
 
   const API = "https://server-1-a50z.onrender.com";
 
@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(`${API}/api/auth/login`, form);
+      const res = await axios.post(`${API}/api/auth/login`, { email: '', password: '' });
       console.log(res.data.token);
       alert(`Welcome ${res.data.user.name}`);
       localStorage.setItem('token', res.data.token);

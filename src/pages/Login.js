@@ -31,8 +31,8 @@ const Login = () => {
     <Container maxWidth="sm">
       <Box mt={5}>
         <Typography variant="h4">Login</Typography>
-        <TextField fullWidth label="Email" name="email" margin="normal" onChange={handleChange} />
-        <TextField fullWidth label="Password" name="password" type="password" margin="normal" onChange={handleChange} />
+        <TextField fullWidth label="Email" name="email" value={form.email} margin="normal" onChange={handleChange} />
+        <TextField fullWidth label="Password" name="password" value={form.password} type="password" margin="normal" onChange={handleChange} />
         <Button variant="contained" fullWidth sx={{ mt: 2 }} onClick={handleLogin}>Login</Button>
       </Box>
     </Container>

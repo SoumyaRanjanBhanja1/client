@@ -33,9 +33,9 @@ const Signup = () => {
     <Container maxWidth="sm">
       <Box mt={5}>
         <Typography variant="h4">Signup</Typography>
-        <TextField fullWidth label="Name" name="name" margin="normal" onChange={handleChange} />
-        <TextField fullWidth label="Email" name="email" margin="normal" onChange={handleChange} />
-        <TextField fullWidth label="Password" name="password" type="password" margin="normal" onChange={handleChange} />
+        <TextField fullWidth label="Name" name="name" value={form.name} margin="normal" onChange={handleChange} />
+        <TextField fullWidth label="Email" name="email" value={form.email} margin="normal" onChange={handleChange} />
+        <TextField fullWidth label="Password" name="password"  value={form.password} type="password" margin="normal" onChange={handleChange} />
         <Button variant="contained" fullWidth sx={{ mt: 2 }} onClick={handleSignup}>Signup</Button>
       </Box>
     </Container>

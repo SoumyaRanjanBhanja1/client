@@ -17,7 +17,8 @@ const Signup = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
     if (!form.name || !form.email || !form.password) {
       alert("Please fill in all fields");
       return;
@@ -35,6 +36,7 @@ const Signup = () => {
 
   return (
     <Container maxWidth="sm">
+      <form onSubmit={handleSignup}>
       <Box mt={5}>
         <Typography variant="h4">Signup</Typography>
         <TextField
@@ -65,12 +67,13 @@ const Signup = () => {
         <Button
           variant="contained"
           fullWidth
+          type='submit'
           sx={{ mt: 2 }}
-          onClick={handleSignup}
         >
           Signup
         </Button>
       </Box>
+      </form>
     </Container>
   );
 };

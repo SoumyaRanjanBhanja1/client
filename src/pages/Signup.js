@@ -4,11 +4,7 @@ import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
 
 const Signup = () => {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
+  const [form, setForm] = useState("");
 
   const API = "https://server-1-a50z.onrender.com";
   const navigate = useNavigate();
@@ -26,7 +22,11 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post(`${API}/api/auth/signup`, form);
+      const res = await axios.post(`${API}/api/auth/signup`, {
+    name: 'bijay',
+    email: 'b@gmail.com',
+    password: '123456'
+  });
       alert(res.data.msg);
       navigate("/login");
     } catch (err) {
